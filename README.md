@@ -1,3 +1,3 @@
-# PythonMaster2
+# Python Master
 
 ## Chapter 1
