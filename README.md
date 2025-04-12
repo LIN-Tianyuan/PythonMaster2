@@ -54,4 +54,37 @@ stu.age = 18
 stu.say_hi()
 stu.say_hi2("enchanté.")
 ```
+### 4. Class et object
+ - Relation:
+   - Les classes sont les "dessins de conception" du programme.
+   - Les objets sont des entités concrètes produites sur la base des dessins.
+ - Programmation orientée objet:
+   - Concevoir des classes
+   - Créer des objets basés sur ces classes
+   - Utiliser pour effectuer des tâches spécifiques
+### 5. Méthodes de construction
+```python
+class Student:
+    name = None
+    age = None
+    tel = None
 
+    def __init__(self, name, age, tel):
+        self.name = name
+        self.age = age
+        self.tel = tel
+        print("La class Student crée un objet.")
+
+"""
+student1 = Student()
+student1.name = "Alex"
+student1.age = 13
+student1.tel = "110"
+"""
+
+# La méthode __init__ est automatiquement exécutée lors de la construction de la classe
+student2 = Student("Michael", 15, "120")
+print(student2.name)
+```
+ - La construction d'un objet de classe est exécutée automatiquement.
+ - Le passage de l'objet de classe est transmis au constructeur, qui permet l'affectation de valeurs aux variables membres.
