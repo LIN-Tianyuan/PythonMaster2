@@ -155,3 +155,64 @@ print(a == b)
  - Les variables et les méthodes membres sont nommées avec __ au début.
  - Les objets de la classe ne peuvent pas accéder aux membres privés.
  - Les autre membres de la classe peuvent accéder aux membres privés.
+
+### 8. Héritage
+
+- L'héritage est une classe qui hérite des variables et des méthodes membres d'une autre classe.
+
+```python
+class Phone:
+    serial_number = None
+    producer = None
+
+    def call_by_4g(self):
+        print("4g call.")
+
+class Phone2025(Phone):
+    face_id = True
+
+    def call_by_5g(self):
+        print("5g call.")
+
+phone = Phone2025()
+phone.call_by_5g()
+phone.call_by_4g()
+
+phone1 = Phone()
+phone1.call_by_4g()
+```
+
+- Héritage simple: une classe hérite d'une autre classe.
+- Héritage multiple: une classe hérite de plusieurs classe, dans l'ordre de gauche à droites.
+- Dans l'héritage multiple, si la classe père possède des méthodes ou des variables portant le même nom, le premier héritage a la priorité sur le second.
+- pass est une déclaration de remplacement utilisée pour garantir l'intégrité d'une fonction(méthode) ou d'une définition de classe, ce qui signifie qu'elle n'a pas de contenu, qu'elle est vide ou qu'elle est en cours d'exécution.
+
+### 9. Override
+
+- Redéfinir une propriété ou une méthode membre d'une classe parente.
+- Il suffit de réimplémenter la méthode ou la propriété membre du même nom dans la sous-classe.
+
+```python
+class Phone:
+    serial_number = None
+    producer = "HUAWEI"
+
+    def call_by_5g(self):
+        print("Father 5g calls.")
+
+class MyPhone(Phone):
+    producer = "Apple"
+
+    def call_by_5g(self):
+        # La première façon d'appeler un membre de la classe père
+        print(f"La marque de la classe père est: {Phone.producer}")
+        Phone.call_by_5g(self)
+
+        # La deuxième façon d'appeler un membre de la classe père
+        print(f"La marque de la classe père est: {super().producer}")
+        super().call_by_5g()
+
+my_phone = MyPhone()
+my_phone.call_by_5g()
+```
+
