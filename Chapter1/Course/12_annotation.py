@@ -39,7 +39,19 @@ print(result)
 
 def func(data: list[int]) -> list[int]:
     data.append(666)
+    return data
     
 # func([1,2,3])
 
+my_list3 = [1, 2, "alex", "luna"]
+my_dict3 = {"name": "alex", "age": 18}
 
+from typing import Union
+
+my_list4:list[Union[str, int]] = [1, 2, "alex", "luna"]
+my_dict4:dict[str, Union[str, int]] = {"name":"alex", "age": 18}
+
+def func2(data: Union[int, str]) -> Union[int, str]:
+    pass
+
+func2("str")
