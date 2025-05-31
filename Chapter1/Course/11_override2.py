@@ -19,3 +19,7 @@ class MyPhone(Phone):
 
 my_phone = MyPhone()
 my_phone.call_by_5g()
+
+
+import random
+random.randint(1, 2)
