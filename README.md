@@ -280,3 +280,37 @@ def func2(data: Union[int, str]) -> Union[int, str]:
 func2("str")
 ```
 
+### 11. Polymorphisme
+
+- Le polymorphisme signifie que le même comportement, en utilisant des objets différents, permet d'obtenir des états différents. 
+- Par exemple, définir une fonction(méthode), déclarer par une annotation de type qu'elle nécessite un objet de la classe parentale et passer en fait un objet de la sous-classe pour effectuer le travail, obtenant ainsi un état de travail différent.
+- Une classe qui contient des méthodes abstraites est appelée class abstraite.
+- Les méthodes qui n'ont pas d'implémentation concrète(pass) sont appelées méthodes abstraites.
+- Principalement utilisé pour la conception de haut niveau(normes de conception) afin que les sous-classes puissent réaliser des implémentations spécifiques.
+
+```python
+class Animal:
+    def speak(self):
+        pass
+
+class Dog(Animal):
+    def speak(self):
+        print("Woof woof woof")
+
+class Cat(Animal):
+    def speak(self):
+        print("Miaou Miaou Miaou")
+
+def make_noise(animal: Animal):
+    animal.speak()
+
+
+dog = Dog()
+cat = Cat()
+dog.speak()
+cat.speak()
+
+make_noise(cat)
+make_noise(dog)
+```
+
